@@ -1,27 +1,31 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
-namespace oceny.Models;
-
-public class Uczen : INotifyPropertyChanged
+namespace oceny.Models
 {
-    public string Imie { get; set; }
-    public string Nazwisko { get; set; }
-    public ObservableCollection<int> Oceny { get; set; } = new ObservableCollection<int>();
-
-    public double Srednia => Oceny.Any() ? Oceny.Average() : 0;
-
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    public void DodajOcene(int ocena)
+    public class Uczen : INotifyPropertyChanged
     {
-        Oceny.Add(ocena);
-        OnPropertyChanged(nameof(Srednia));
+        public string Imie { get; set; }
+        public string Nazwisko { get; set; }
+        public ObservableCollection<Ocena> Oceny { get; set; } = new ObservableCollection<Ocena>();
+        public double Srednia => Oceny.Any() ? Oceny.Average(o => o.Wartosc) : 0;
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void DodajOcene(int wartosc, string przedmiot)
+        {
+            Oceny.Add(new Ocena { Wartosc = wartosc, Przedmiot = przedmiot, Data = DateTime.Now });
+            OnPropertyChanged(nameof(Srednia));
+        }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
-
-    protected void OnPropertyChanged(string propertyName)
+    public class Ocena
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public int Wartosc { get; set; }
+        public string Przedmiot { get; set; }
+        public DateTime Data { get; set; }
     }
 }

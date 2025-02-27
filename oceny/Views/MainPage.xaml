@@ -8,25 +8,42 @@
         <local:MainViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20" BackgroundColor="Black">
+    <StackLayout Padding="20" BackgroundColor="#2C3E50">
         <ListView ItemsSource="{Binding Uczniowie}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10" BackgroundColor="Gray">
-                            <Label Text="{Binding Imie}" FontSize="20" TextColor="White"/>
-                            <Label Text="{Binding Nazwisko}" TextColor="White"/>
-                            <Label Text="{Binding Srednia, StringFormat='Średnia: {0:F1}'}" TextColor="White"/>
-                            <Button Text="Wyświetl ucznia" 
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=WyswietlUczniaCommand}" 
-                                    CommandParameter="{Binding}"/>
-                            <Button Text="Dodaj ocenę" 
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=DodajOceneCommand}" 
-                                    CommandParameter="{Binding}"/>
-                        </StackLayout>
+                        <Frame Padding="10" BackgroundColor="#34495E" Margin="10" CornerRadius="10" HasShadow="True">
+                            <StackLayout>
+                                <Label Text="{Binding Imie}" FontSize="22" TextColor="White"/>
+                                <Label Text="{Binding Nazwisko}" TextColor="White"/>
+                                <Label Text="{Binding Srednia, StringFormat='Średnia: {0:F1}'}" TextColor="White"/>
+
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Frame Padding="0" BackgroundColor="#1ABC9C" CornerRadius="5" HasShadow="True">
+                                        <Button Text="Wyświetl ucznia" 
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=WyswietlUczniaCommand}" 
+                                                CommandParameter="{Binding}" 
+                                                TextColor="White" />
+                                    </Frame>
+                                    <Frame Padding="0" BackgroundColor="#E74C3C" CornerRadius="5" HasShadow="True">
+                                        <Button Text="Dodaj ocenę" 
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=DodajOceneCommand}" 
+                                                CommandParameter="{Binding}" 
+                                                TextColor="White" />
+                                    </Frame>
+                                    <Frame Padding="0" BackgroundColor="#F39C12" CornerRadius="5" HasShadow="True">
+                                        <Button Text="Oblicz średnią" 
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=ObliczSredniaCommand}" 
+                                                CommandParameter="{Binding}" 
+                                                TextColor="White" />
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+</StackLayout>
 </ContentPage>
