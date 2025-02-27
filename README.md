@@ -1,6 +1,5 @@
     Stan początkowy
-     ![1](https://github.com/user-attachments/assets/67e25934-6a45-4fe4-b066-1f50d434106c)
-     
+   ![1](https://github.com/user-attachments/assets/4e2af313-0def-4f82-9fd4-fa05d98f53cd)  
     po wybraniu :  Wyświetl ucznia
   ![2](https://github.com/user-attachments/assets/46445378-b510-4f58-9927-d7982b2fc3c6)
 
