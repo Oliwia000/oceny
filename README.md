@@ -1,14 +1,14 @@
     Stan początkowy
    ![1](https://github.com/user-attachments/assets/4e2af313-0def-4f82-9fd4-fa05d98f53cd)  
-    po wybraniu :  Wyświetl ucznia
+       po wybraniu :  Wyświetl ucznia
     
   ![2](https://github.com/user-attachments/assets/46445378-b510-4f58-9927-d7982b2fc3c6)
 
-   po wybraniu :  Oblicz średnią
+     po wybraniu :  Oblicz średnią
    
   ![3](https://github.com/user-attachments/assets/53def062-558c-4bab-b0f9-79d6fbdbeb86)
 
-   po wybraniu :  Dodaj ocenę
+     po wybraniu :  Dodaj ocenę
    
   ![4](https://github.com/user-attachments/assets/dee36f00-9a3f-4120-bb84-b2d92070a625)
 
