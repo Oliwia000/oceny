@@ -1,7 +1,7 @@
 
      Stan początkowy
-      ![1](https://github.com/user-attachments/assets/8aa0dced-00f0-449a-9223-f73dd20e651a)
-
+     ![1](https://github.com/user-attachments/assets/67e25934-6a45-4fe4-b066-1f50d434106c)
+     
     po wybraniu :  Wyświetl ucznia
   ![2](https://github.com/user-attachments/assets/46445378-b510-4f58-9927-d7982b2fc3c6)
 
