@@ -1,12 +1,13 @@
 ﻿using Microsoft.Maui.Controls;
+using oceny.ViewModels;
 
-namespace oceny.Views
+namespace oceny.Views;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();  
+        BindingContext = new MainViewModel();
     }
 }

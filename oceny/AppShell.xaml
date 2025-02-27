@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="oceny.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:oceny"
-    Shell.FlyoutBehavior="Disabled"
-    Title="oceny">
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:oceny.Views"
+       x:Class="oceny.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent Route="main" ContentTemplate="{DataTemplate local:MainPage}" />
+    </TabBar>
 
 </Shell>
