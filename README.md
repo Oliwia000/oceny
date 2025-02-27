@@ -1,5 +1,4 @@
-
-     Stan początkowy
+    Stan początkowy
      ![1](https://github.com/user-attachments/assets/67e25934-6a45-4fe4-b066-1f50d434106c)
      
     po wybraniu :  Wyświetl ucznia
