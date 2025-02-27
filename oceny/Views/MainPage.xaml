@@ -19,24 +19,25 @@
                                 <Label Text="{Binding Nazwisko}" TextColor="White"/>
                                 <Label Text="{Binding Srednia, StringFormat='Średnia: {0:F1}'}" TextColor="White"/>
 
-                                <StackLayout Orientation="Horizontal" Spacing="10">
-                                    <Frame Padding="0" BackgroundColor="#1ABC9C" CornerRadius="5" HasShadow="True">
+                                <StackLayout Orientation="Horizontal"  Padding="8"   Spacing="10">
+                                    <Frame Padding="0"   HasShadow="True">
                                         <Button Text="Wyświetl ucznia" 
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=WyswietlUczniaCommand}" 
                                                 CommandParameter="{Binding}" 
                                                 TextColor="White" />
                                     </Frame>
-                                    <Frame Padding="0" BackgroundColor="#E74C3C" CornerRadius="5" HasShadow="True">
+                                    <Frame Padding="0"  HasShadow="True">
                                         <Button Text="Dodaj ocenę" 
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=DodajOceneCommand}" 
                                                 CommandParameter="{Binding}" 
                                                 TextColor="White" />
                                     </Frame>
-                                    <Frame Padding="0" BackgroundColor="#F39C12" CornerRadius="5" HasShadow="True">
+                                    <Frame Padding="0"  HasShadow="True">
                                         <Button Text="Oblicz średnią" 
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=ObliczSredniaCommand}" 
                                                 CommandParameter="{Binding}" 
-                                                TextColor="White" />
+                                                TextColor="White"
+                                                />
                                     </Frame>
                                 </StackLayout>
                             </StackLayout>

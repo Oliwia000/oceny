@@ -10,14 +10,11 @@ namespace oceny.ViewModels
     public class MainViewModel
     {
         public ObservableCollection<Uczen> Uczniowie { get; set; } = new ObservableCollection<Uczen>();
-
         public ICommand WyswietlUczniaCommand { get; }
         public ICommand DodajOceneCommand { get; }
         public ICommand ObliczSredniaCommand { get; }
-
         public MainViewModel()
         {
-            // Dodanie nowych uczniów
             Uczniowie.Add(new Uczen { Imie = "Jan", Nazwisko = "Kowalski" });
             Uczniowie.Add(new Uczen { Imie = "Anna", Nazwisko = "Nowak" });
             Uczniowie.Add(new Uczen { Imie = "Michał", Nazwisko = "Wójcik" });
@@ -28,10 +25,8 @@ namespace oceny.ViewModels
             DodajOceneCommand = new Command<Uczen>(DodajOcene);
             ObliczSredniaCommand = new Command<Uczen>(ObliczSrednia);
         }
-
         private async void WyswietlUcznia(Uczen uczen)
         {
-            // Wyświetlenie szczegółów ucznia, w tym oceny, przedmiotu i daty
             string ocenyStr = string.Join("\n", uczen.Oceny.Select(o =>
                 $"{o.Przedmiot}: {o.Wartosc} (Data: {o.Data:dd.MM.yyyy})"));
 
@@ -40,7 +35,6 @@ namespace oceny.ViewModels
                 $"Średnia: {uczen.Srednia:F1}\nOceny:\n{ocenyStr}",
                 "OK");
         }
-
         private async void DodajOcene(Uczen uczen)
         {
             string ocenaStr = await Application.Current.MainPage.DisplayPromptAsync(
@@ -58,7 +52,6 @@ namespace oceny.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Błąd", "Podano niepoprawną ocenę", "OK");
             }
         }
-
         private async void ObliczSrednia(Uczen uczen)
         {
             double srednia = uczen.Srednia;
