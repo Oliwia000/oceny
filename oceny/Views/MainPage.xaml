@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:oceny.ViewModels"
+             x:Class="oceny.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" BackgroundColor="Black">
+        <ListView ItemsSource="{Binding Uczniowie}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="Gray">
+                            <Label Text="{Binding Imie}" FontSize="20" TextColor="White"/>
+                            <Label Text="{Binding Nazwisko}" TextColor="White"/>
+                            <Label Text="{Binding Srednia, StringFormat='Średnia: {0:F1}'}" TextColor="White"/>
+                            <Button Text="Wyświetl ucznia" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=WyswietlUczniaCommand}" 
+                                    CommandParameter="{Binding}"/>
+                            <Button Text="Dodaj ocenę" 
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=DodajOceneCommand}" 
+                                    CommandParameter="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
